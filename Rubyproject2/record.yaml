@@ -1,0 +1,15 @@
+record1:
+  username: selenium
+  password: selenium
+  trip_type: oneway
+  no_of_passengers: 2
+record2:
+  username: selenium
+  password: selenium
+  trip_type: roundtrip
+  no_of_passengeers: 3
+record3:
+  username: selenium
+  password: selenium
+  trip_type: oneway
+  no_of_passengeers: 4
