@@ -74,8 +74,19 @@ time = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[1]/div[2]/i
 time.click
 sleep(1)
 
-confirm = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[2]/div/form/div[2]/div[1]/div/button")
+later = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[2]/div/form/div[1]/button[2]")
+later.click
+sleep(1)
+date = Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "Date"))
+date.select_by(:index, 3)
+sleep(1)
+time = Selenium::WebDriver::Support::Select.new(driver.find_element(:id, "Time"))
+time.select_by(:index, 9)
+sleep(1)
+
+confirm = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[2]/div/form/div[2]/div[2]/div/button")
 confirm.click
+sleep(1)
 
 fname = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[1]/div/input")
 fname.send_keys('Hungry')
@@ -88,4 +99,8 @@ email.send_keys('ILikePigs@gmail.com')
 sleep(1)
 phone = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[4]/div/input")
 phone.send_keys('555-867-5309')
-sleep(5)
+sleep(1)
+
+checkbox = driver.find_element(:xpath, "//*[@id='email_list_Opt_In_Checkbox']")
+checkbox.click
+sleep(10)

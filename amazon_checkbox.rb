@@ -8,6 +8,7 @@ driver.manage.window.maximize
 #Navigate to the website
 driver.get "https://www.amazon.com"
 search_box = driver.find_element(:xpath, "//input[@id='twotabsearchtextbox']")
+
 search_box.send_keys("beer")
 search_btn = driver.find_element(:xpath, "//div[@class='nav-search-submit nav-sprite']")
 search_btn.click
