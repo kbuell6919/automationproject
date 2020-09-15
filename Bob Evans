@@ -1,0 +1,91 @@
+require 'selenium-webdriver'
+
+driver = Selenium::WebDriver.for :chrome
+
+#Maximize the window
+driver.manage.window.maximize
+
+#Navigate to the website
+driver.get "https://www.bobevans.com/"
+sleep (2)
+
+#Click the Locations button
+locations = driver.find_element(:xpath, "//*[@id='header']/div/ul[1]/li[2]/a")
+locations.click
+sleep(1)
+
+#Click the Search near me button
+search_near = driver.find_element(:xpath, "//*[@id='app']/main/section/div/form/div[3]/button")
+search_near.click
+sleep(1)
+
+#Select a store
+result = driver.find_element(:xpath, "//*[@id='locationsList']/div[1]/div/div[2]/button")
+result.click
+sleep(1)
+
+#Select Pick up
+pu = driver.find_element(:xpath, "//*[@id='app']/main/section/section/div[1]/div[1]/button[1]")
+pu.click
+sleep(1)
+confirm = driver.find_element(:xpath, "//*[@id='app']/main/section/section/div[1]/button")
+confirm.click
+sleep(1)
+
+kids = driver.find_element(:xpath, "//*[@id='app']/main/section/ul/li[13]")
+kids.click
+sleep(1)
+
+piggy = driver.find_element(:xpath, "//*[@id='app']/main/section/section[2]/div/div/div/div/div[2]/a/img")
+piggy.click
+sleep(1)
+
+milk = driver.find_element(:xpath, "//*[@id='app']/main/section/div/div[2]/div[2]/div[2]/div/div/div[2]/button")
+milk.click
+sleep(1)
+bacon = driver.find_element(:xpath, "//*[@id='app']/main/section/div/div[2]/div[3]/div[2]/div/div/div[2]/button")
+bacon.click
+sleep(1)
+instructions = driver.find_element(:xpath, "//*[@id='specialInstructions']")
+instructions.send_keys('Make the pig look real good')
+sleep(1)
+qty = driver.find_element(:xpath, "//*[@id='increaseQty']")
+qty.click
+sleep(1)
+qty.click
+sleep(1)
+add = driver.find_element(:xpath, "//*[@id='addItem']")
+add.click
+sleep(2)
+
+bag = driver.find_element(:xpath, "//*[@id='header']/div/ul[2]/li[2]/a/i")
+bag.click
+sleep(1)
+
+guest = driver.find_element(:xpath, "//*[@id='app']/main/section/div[1]/button[1]")
+guest.click
+sleep(1)
+
+continue = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/footer/button")
+continue.click
+sleep(1)
+
+time = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[1]/div[2]/i")
+time.click
+sleep(1)
+
+confirm = driver.find_element(:xpath, "//*[@id='OrderTimeForm']/div/div[2]/div/form/div[2]/div[1]/div/button")
+confirm.click
+
+fname = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[1]/div/input")
+fname.send_keys('Hungry')
+sleep(1)
+lname = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[2]/div/input")
+lname.send_keys('Child')
+sleep(1)
+email = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[3]/div/input")
+email.send_keys('ILikePigs@gmail.com')
+sleep(1)
+phone = driver.find_element(:xpath, "//*[@id='app']/main/section/div[2]/div/div[2]/form/div/div[2]/div[4]/div/input")
+phone.send_keys('555-867-5309')
+sleep(5)
